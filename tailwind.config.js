@@ -18,10 +18,11 @@ module.exports = {
 			lg: '960px',
 			xl: '1200px'
 		},
+		
+  	extend: {
 		fontFamily: {
 			primary: "var(--font-jetbrainsMono)",
 		},
-  	extend: {
 		keyframes:{
 			"according-down": {
 				from: {height:"0"},
