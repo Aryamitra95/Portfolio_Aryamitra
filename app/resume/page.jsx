@@ -1,38 +1,42 @@
 "use client";
 import React from 'react'
-import {FaHtml5, FaCss4, FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa"
+import {FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa"
 import {SiTailwindcss, SiNextdotjs} from "react-icons/si"
+import { Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { motion } from 'framer-motion';
 
 const about ={
   title: 'About me',
   description:'',
   info:[
     {
-      feildName:"Name",
+      fieldName:"Name",
       fieldValue:"Aryamitra Pradhan",
     },
     {
-      feildName:"Phone",
+      fieldName:"Phone",
       fieldValue:"(+91) 82608 15915",
     },
     {
-      feildName:"GitHub",
+      fieldName:"GitHub",
       fieldValue:"Aryamitra95",
     },
     {
-      feildName:"Nationality",
+      fieldName:"Nationality",
       fieldValue:"Indian",
     },
     {
-      feildName:"Email",
+      fieldName:"Email",
       fieldValue:"aryamitra.pradhan@gmail.com",
     },
     {
-      feildName:"Freelance",
+      fieldName:"Freelance",
       fieldValue:"Available",
     },
     {
-      feildName:"Language",
+      fieldName:"Language",
       fieldValue:"English",
     }
 
@@ -84,8 +88,8 @@ const skills = {
       name: "HTML 5"
     },
     {
-      icon:<FaCss4/>,
-      name: "CSS 4"
+      icon:<FaCss3/>,
+      name: "CSS 3"
     },
     {
       icon:<FaJs/>,
@@ -114,10 +118,7 @@ const skills = {
   ]
 }
 
-import { Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { motion } from 'framer-motion';
+
 
 const Resume = () => {
   return (
@@ -163,7 +164,7 @@ const Resume = () => {
            </TabsContent>
            <TabsContent value="skills" className="w-full h-full">
             <div className='flex flex-col gap-[30px]'>
-              <div className='felx flex-col gap-[30px] text-center xl:text-left'>
+              <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 <h3 className='text-4xl font-bold'>{skills.title}</h3>
                 <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{skills.description}</p>
               </div>
@@ -193,8 +194,8 @@ const Resume = () => {
                 {about.info.map((item,index)=>{
                   return (
                     <li key={index} className='flex items-center justify-center xl:justify-start gap-4'>
-                        <span className='text-white/60'>{item.feildName}</span>
-                        <span className='text-xl'>{item.fieldValue}</span>
+                        <span className='text-white/60'>{item.fieldName}</span>
+                        <span className='text-md'>{item.fieldValue}</span>
                     </li>
                   )
                 })}
